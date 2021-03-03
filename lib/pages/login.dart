@@ -60,12 +60,30 @@ class Login extends StatelessWidget {
                 disabledColor: Colors.amber,
                 child: Text("Iniciar Sesion"),
                 splashColor: Colors.amber,
-                color: Colors.blueAccent,
+                color: Colors.amber[500],
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12.0),
                     side: BorderSide(color: Colors.red)),
                 onPressed: () {
-                  Navigator.pushReplacementNamed(context, 'home');
+                  Navigator.pushNamed(context, 'home');
+                },
+              ),
+            ),
+            SizedBox(height: MediaQuery.of(context).size.height * .02),
+            Container(
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height * 0.08,
+              child: RaisedButton(
+                elevation: 0,
+                disabledColor: Colors.amber,
+                child: Text("Registrarse"),
+                splashColor: Colors.amber,
+                color: Colors.amber[500],
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12.0),
+                    side: BorderSide(color: Colors.red)),
+                onPressed: () {
+                  Navigator.pushNamed(context, 'register');
                 },
               ),
             ),
