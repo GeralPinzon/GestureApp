@@ -59,8 +59,6 @@ class Card extends StatelessWidget {
       ),
     );
 
-    final menu = Container();
-
     return Row(
       children: [photo, userDetails],
     );
