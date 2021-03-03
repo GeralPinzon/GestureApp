@@ -32,7 +32,7 @@ class Login extends StatelessWidget {
               keyboardType: TextInputType.emailAddress,
               decoration: InputDecoration(
                 errorText: 'Ingreselo de nuevo',
-                labelText: 'Iniciar sesion',
+                labelText: 'Hoola mundooo',
                 border: OutlineInputBorder(
                   borderSide: BorderSide(color: Colors.red),
                 ),
