@@ -9,59 +9,69 @@ class Login extends StatelessWidget {
         backgroundColor: Colors.transparent,
         elevation: 0,
       ),
-      body: Column(
-        children: [
-          Text(
-            'Iniciar sesion',
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              color: Colors.amberAccent,
-              fontSize: MediaQuery.of(context).textScaleFactor * 24,
-              fontWeight: FontWeight.w900,
-            ),
-          ),
-          TextFormField(
-            controller: emailController,
-            keyboardType: TextInputType.emailAddress,
-            decoration: InputDecoration(
-              labelText: 'Correo electronico',
-              border: OutlineInputBorder(
-                borderSide: BorderSide(color: Colors.red),
+      body: Container(
+        padding: EdgeInsets.symmetric(horizontal: 20), //Falta resposive
+        child: Column(
+          children: [
+            SizedBox(height: MediaQuery.of(context).size.height * .04),
+            Text(
+              'Iniciar sesion',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: Colors.amberAccent,
+                fontSize: MediaQuery.of(context).textScaleFactor * 24,
+                fontWeight: FontWeight.w900,
               ),
             ),
-            validator: validateEmail,
-          ),
-          TextFormField(
-            obscureText: true,
-            decoration: InputDecoration(
-              labelText: 'Contraseña',
-              border: OutlineInputBorder(
-                borderSide: BorderSide(color: Colors.red),
+            SizedBox(height: MediaQuery.of(context).size.height * .04),
+            TextFormField(
+              controller: emailController,
+              keyboardType: TextInputType.emailAddress,
+              decoration: InputDecoration(
+                focusColor: Colors.amber,
+                labelText: 'Correo electronico',
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(15),
+                  borderSide: BorderSide(color: Colors.red),
+                ),
+              ),
+              validator: validateEmail,
+            ),
+            SizedBox(height: MediaQuery.of(context).size.height * .02),
+            TextFormField(
+              obscureText: true,
+              decoration: InputDecoration(
+                labelText: 'Contraseña',
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(15),
+                  borderSide: BorderSide(color: Colors.red),
+                ),
+              ),
+              validator: validateEmail,
+            ),
+            Expanded(
+              child: Container(),
+            ),
+            Container(
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height * 0.08,
+              child: RaisedButton(
+                elevation: 0,
+                disabledColor: Colors.amber,
+                child: Text("Iniciar Sesion"),
+                splashColor: Colors.amber,
+                color: Colors.blueAccent,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12.0),
+                    side: BorderSide(color: Colors.red)),
+                onPressed: () {
+                  Navigator.pushReplacementNamed(context, 'home');
+                },
               ),
             ),
-            validator: validateEmail,
-          ),
-          Expanded(
-            child: Container(),
-          ),
-          Container(
-            width: 200,
-            height: 50,
-            child: RaisedButton(
-              elevation: 0,
-              disabledColor: Colors.amber,
-              child: Text("Iniciar Sesion"),
-              splashColor: Colors.amber,
-              color: Colors.blueAccent,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12.0),
-                  side: BorderSide(color: Colors.red)),
-              onPressed: () {
-                print("Hola Raised Button");
-              },
-            ),
-          ),
-        ],
+            SizedBox(height: MediaQuery.of(context).size.height * .04),
+          ],
+        ),
       ),
     );
   }
