@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Login extends StatelessWidget {
+  TextEditingController emailController = new TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,25 +29,65 @@ class Login extends StatelessWidget {
           Container(
             width: MediaQuery.of(context).size.width * 0.8,
             child: TextFormField(
-              onChanged: (value) => print('Hola'),
+              controller: emailController,
               keyboardType: TextInputType.emailAddress,
               decoration: InputDecoration(
-                errorText: 'Ingreselo de nuevo',
-                labelText: 'Iniciar sesion',
+                labelText: 'Correo electronico',
                 border: OutlineInputBorder(
                   borderSide: BorderSide(color: Colors.red),
                 ),
               ),
-              validator: (value) {
-                if (value.isEmpty) {
-                  return 'Please enter some text';
-                }
-                return null;
+              validator: validateEmail,
+            ),
+          ),
+          SizedBox(
+            height: MediaQuery.of(context).size.height * 0.05,
+          ),
+          Container(
+            width: MediaQuery.of(context).size.width * 0.8,
+            child: TextFormField(
+              obscureText: true,
+              decoration: InputDecoration(
+                labelText: 'Contraseña',
+                border: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.red),
+                ),
+              ),
+              validator: validateEmail,
+            ),
+          ),
+          Container(
+            width: 200,
+            height: 50,
+            child: RaisedButton(
+              elevation: 0,
+              disabledColor: Colors.amber,
+              child: Text("Iniciar Sesion"),
+              splashColor: Colors.amber,
+              color: Colors.blueAccent,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12.0),
+                  side: BorderSide(color: Colors.red)),
+              onPressed: () {
+                print("Hola Raised Button");
               },
             ),
-          )
+          ),
         ],
       ),
     );
+  }
+
+  String validateEmail(String value) {
+    String pattern =
+        r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
+    RegExp regExp = new RegExp(pattern);
+    if (value.length == 0) {
+      return "El correo es necesario";
+    } else if (!regExp.hasMatch(value)) {
+      return "Correo invalido";
+    } else {
+      return null;
+    }
   }
 }
