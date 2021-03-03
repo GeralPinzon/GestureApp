@@ -11,8 +11,8 @@ class Login extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Container(
-            width: MediaQuery.of(context).size.width * 1,
+          Expanded(
+            flex: 2,
             child: Text(
               'Iniciar sesion',
               textAlign: TextAlign.center,
@@ -23,54 +23,52 @@ class Login extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(
-            height: MediaQuery.of(context).size.height * 0.05,
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width * 0.8,
-            child: TextFormField(
-              controller: emailController,
-              keyboardType: TextInputType.emailAddress,
-              decoration: InputDecoration(
-                labelText: 'Correo electronico',
-                border: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.red),
+          Expanded(
+            flex: 7,
+            child: Column(
+              children: [
+                TextFormField(
+                  controller: emailController,
+                  keyboardType: TextInputType.emailAddress,
+                  decoration: InputDecoration(
+                    labelText: 'Correo electronico',
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.red),
+                    ),
+                  ),
+                  validator: validateEmail,
                 ),
-              ),
-              validator: validateEmail,
+                TextFormField(
+                  obscureText: true,
+                  decoration: InputDecoration(
+                    labelText: 'Contraseña',
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.red),
+                    ),
+                  ),
+                  validator: validateEmail,
+                ),
+              ],
             ),
           ),
-          SizedBox(
-            height: MediaQuery.of(context).size.height * 0.05,
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width * 0.8,
-            child: TextFormField(
-              obscureText: true,
-              decoration: InputDecoration(
-                labelText: 'Contraseña',
-                border: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.red),
-                ),
+          Expanded(
+            flex: 1,
+            child: Container(
+              width: 200,
+              height: 50,
+              child: RaisedButton(
+                elevation: 0,
+                disabledColor: Colors.amber,
+                child: Text("Iniciar Sesion"),
+                splashColor: Colors.amber,
+                color: Colors.blueAccent,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12.0),
+                    side: BorderSide(color: Colors.red)),
+                onPressed: () {
+                  print("Hola Raised Button");
+                },
               ),
-              validator: validateEmail,
-            ),
-          ),
-          Container(
-            width: 200,
-            height: 50,
-            child: RaisedButton(
-              elevation: 0,
-              disabledColor: Colors.amber,
-              child: Text("Iniciar Sesion"),
-              splashColor: Colors.amber,
-              color: Colors.blueAccent,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12.0),
-                  side: BorderSide(color: Colors.red)),
-              onPressed: () {
-                print("Hola Raised Button");
-              },
             ),
           ),
         ],
