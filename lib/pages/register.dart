@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:GestureApp/widgets/appBarTransparent.dart';
 
 class Register extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-      ),
+      appBar: AppBarTransparent(),
       body: ListView(
         children: [
           Container(

@@ -1,15 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:GestureApp/widgets/appBarTransparent.dart';
 
 class Login extends StatelessWidget {
   TextEditingController emailController = new TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        brightness: Brightness.light,
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-      ),
+      appBar: AppBarTransparent(),
       body: Container(
         padding: EdgeInsets.symmetric(horizontal: 20), //Falta resposive
         child: Column(
