@@ -8,6 +8,10 @@ class Home extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.amber[500],
         elevation: 0,
+        title: Text(
+          'Bienvenido',
+          textAlign: TextAlign.center,
+        ),
       ),
       body: Column(
         children: [
@@ -20,11 +24,21 @@ class Home extends StatelessWidget {
           padding: EdgeInsets.zero,
           children: [
             DrawerHeader(
-              child: Text('Hola'),
-              decoration: BoxDecoration(
-                color: Colors.amber[500],
-              ),
-            ),
+                decoration: BoxDecoration(
+                  color: Colors.amber[500],
+                ),
+                child: Stack(
+                  children: [
+                    Positioned(
+                        bottom: 20.0,
+                        left: 20.0,
+                        child: Text("Menu",
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 18,
+                                fontWeight: FontWeight.w500))),
+                  ],
+                )),
             ListTile(
               title: Text('Item 1'),
               onTap: () {
