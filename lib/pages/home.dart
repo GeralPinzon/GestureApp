@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:GestureApp/pages/card.dart' as car;
-import 'package:GestureApp/widgets/appBarTransparent.dart';
 import 'package:flutter/cupertino.dart';
 
 class Home extends StatelessWidget {
@@ -59,7 +57,7 @@ class Home extends StatelessWidget {
         child: BottomNavigationBar(onTap: (value) => {}, items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            title: Text(""),
+            title: Text("Home"),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.search),
