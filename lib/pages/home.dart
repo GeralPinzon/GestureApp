@@ -13,7 +13,7 @@ class Home extends StatelessWidget {
           Stack(
             children: [
               Container(
-                height: MediaQuery.of(context).size.height * 0.2,
+                height: MediaQuery.of(context).size.height * 0.3,
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
@@ -26,11 +26,11 @@ class Home extends StatelessWidget {
                 ),
               ),
               Center(
-                heightFactor: 1.3,
+                heightFactor: 1.6,
                 child: Container(
                   margin: EdgeInsets.all(20),
-                  width: 200,
-                  height: 200,
+                  width: 250,
+                  height: 250,
                   decoration: BoxDecoration(
                     image: DecorationImage(
                       fit: BoxFit.cover,
