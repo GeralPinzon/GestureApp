@@ -56,12 +56,12 @@ class Home extends StatelessWidget {
         ),
         child: BottomNavigationBar(onTap: (value) => {}, items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            title: Text("Home"),
-          ),
-          BottomNavigationBarItem(
             icon: Icon(Icons.search),
             title: Text(""),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            title: Text("Home"),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
