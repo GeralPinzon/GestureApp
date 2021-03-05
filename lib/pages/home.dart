@@ -56,16 +56,40 @@ class Home extends StatelessWidget {
         ),
         child: BottomNavigationBar(onTap: (value) => {}, items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            title: Text("Home"),
+            icon: Icon(
+              Icons.account_circle_outlined,
+              size: 40,
+            ),
+            title: Text(
+              "Mi cuenta",
+              style: TextStyle(
+                fontSize: MediaQuery.of(context).textScaleFactor * 14,
+              ),
+            ),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            title: Text(""),
+            icon: Icon(
+              Icons.connect_without_contact_outlined,
+              size: 40,
+            ),
+            title: Text(
+              "Home",
+              style: TextStyle(
+                fontSize: MediaQuery.of(context).textScaleFactor * 14,
+              ),
+            ),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            title: Text(""),
+            icon: Icon(
+              Icons.help_outline_outlined,
+              size: 40,
+            ),
+            title: Text(
+              "Ayuda",
+              style: TextStyle(
+                fontSize: MediaQuery.of(context).textScaleFactor * 14,
+              ),
+            ),
           ),
         ]),
       ),
