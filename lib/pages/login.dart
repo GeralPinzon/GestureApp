@@ -1,27 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:GestureApp/widgets/appBarTransparent.dart';
+import 'package:GestureApp/constant/constant.dart';
 
 class Login extends StatelessWidget {
   TextEditingController emailController = new TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: backgroundApp,
       appBar: AppBarTransparent(),
       body: Container(
         padding: EdgeInsets.symmetric(horizontal: 20), //Falta resposive
         child: Column(
           children: [
-            SizedBox(height: MediaQuery.of(context).size.height * .04),
-            Text(
-              'Iniciar sesion',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: Colors.amberAccent,
-                fontSize: MediaQuery.of(context).textScaleFactor * 24,
-                fontWeight: FontWeight.w900,
+            SizedBox(height: MediaQuery.of(context).size.height * .06),
+            Container(
+              width: MediaQuery.of(context).size.width,
+              child: Text(
+                'Iniciar sesion',
+                textAlign: TextAlign.left,
+                style: TextStyle(
+                  color: titleColor,
+                  fontSize: MediaQuery.of(context).textScaleFactor * 40,
+                  fontWeight: fontweightTitle,
+                ),
               ),
             ),
-            SizedBox(height: MediaQuery.of(context).size.height * .04),
+            SizedBox(height: MediaQuery.of(context).size.height * .06),
             TextFormField(
               controller: emailController,
               keyboardType: TextInputType.emailAddress,
@@ -54,34 +59,21 @@ class Login extends StatelessWidget {
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height * 0.08,
               child: RaisedButton(
-                elevation: 0,
-                disabledColor: Colors.amber,
-                child: Text("Iniciar Sesion"),
-                splashColor: Colors.amber,
-                color: Colors.amber[500],
+                elevation: elevationButton,
+                child: Text(
+                  "Iniciar Sesion",
+                  style: TextStyle(
+                    color: colorTextButton,
+                    fontSize: MediaQuery.of(context).textScaleFactor * 16,
+                  ),
+                ),
+                color: backgroundButton,
                 shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12.0),
-                    side: BorderSide(color: Colors.red)),
+                  borderRadius: BorderRadius.circular(12.0),
+                ),
                 onPressed: () {
-                  Navigator.pushNamed(context, 'home');
-                },
-              ),
-            ),
-            SizedBox(height: MediaQuery.of(context).size.height * .02),
-            Container(
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height * 0.08,
-              child: RaisedButton(
-                elevation: 0,
-                disabledColor: Colors.amber,
-                child: Text("Registrarse"),
-                splashColor: Colors.amber,
-                color: Colors.amber[500],
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12.0),
-                    side: BorderSide(color: Colors.red)),
-                onPressed: () {
-                  Navigator.pushNamed(context, 'register');
+                  Navigator.pushNamedAndRemoveUntil(
+                      context, 'home', (Route<dynamic> route) => false);
                 },
               ),
             ),
