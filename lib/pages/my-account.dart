@@ -47,24 +47,30 @@ class MyAccount extends StatelessWidget {
                       width: MediaQuery.of(context).size.width * 0.4,
                       child: Column(
                         children: [
-                          Text(
-                            "Mis datos",
-                            textAlign: TextAlign.start,
-                            style: TextStyle(
-                              color: titleColor,
-                              fontSize:
-                                  MediaQuery.of(context).textScaleFactor * 20,
-                              fontWeight: fontweightTitle,
+                          Container(
+                            alignment: Alignment.topLeft,
+                            child: Text(
+                              "Mis datos",
+                              textAlign: TextAlign.start,
+                              style: TextStyle(
+                                color: titleColor,
+                                fontSize:
+                                    MediaQuery.of(context).textScaleFactor * 20,
+                                fontWeight: fontweightTitle,
+                              ),
                             ),
                           ),
-                          Text(
-                            "Edita tus datos personales",
-                            textAlign: TextAlign.start,
-                            style: TextStyle(
-                              color: titleColor,
-                              fontSize:
-                                  MediaQuery.of(context).textScaleFactor * 14,
-                              fontWeight: FontWeight.w400,
+                          Container(
+                            alignment: Alignment.topLeft,
+                            child: Text(
+                              "Editar",
+                              textAlign: TextAlign.left,
+                              style: TextStyle(
+                                color: titleColor,
+                                fontSize:
+                                    MediaQuery.of(context).textScaleFactor * 14,
+                                fontWeight: FontWeight.w400,
+                              ),
                             ),
                           ),
                         ],
@@ -85,6 +91,33 @@ class MyAccount extends StatelessWidget {
                 ),
               ),
             ),
+            Expanded(
+              child: Container(),
+            ),
+            Container(
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height * 0.08,
+              child: RaisedButton(
+                elevation: elevationButton,
+                child: Text(
+                  "Cerrar Sesion",
+                  style: TextStyle(
+                    fontSize: MediaQuery.of(context).textScaleFactor * 16,
+                    color: colorTextButton,
+                  ),
+                ),
+                color: backgroundButton,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12.0),
+                ),
+                onPressed: () {
+                  Navigator.pushNamed(context, 'principal');
+                },
+              ),
+            ),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.02,
+            )
           ],
         ),
       ),
